@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.title {
+    padding: 5%;
+    h6 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .add-todo-container {
+        display: block;
+        margin-bottom: 2rem;
+    }
+}
+
+.items-container {
+    display: flex;
+    .unchecked-container {
+        padding: 5%;
+    }
+    .checked-container {
+        padding: 5%;
+    }
+}
+

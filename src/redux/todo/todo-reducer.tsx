@@ -1,37 +1,33 @@
 import { InputActionTypes } from "./todo-types";
-
-interface stateType {
-    todo: { id: number; task: string; done: boolean }[];
-}
-
-type payloadType = string | number;
-type actionType = {
-    type: string;
-    payload: payloadType;
-};
+import { v4 as uuidv4 } from "uuid";
 
 const INITIAL_STATE: stateType = {
     todo: [],
 };
 
-const addTodo = (state: stateType, payload: payloadType) => ({
-    id: state.todo.length + 1,
-    task: payload,
+const addTodo = (payload: todoType): todoType => ({
+    id: uuidv4(),
+    task: payload.task,
     done: false,
 });
 
-const toggleTodo = (state: stateType, payload: payloadType) =>
-    state.todo.map((el) => (el.id === payload ? { ...el, done: el.done } : el));
+const toggleTodo = (state: stateType, payload: todoType): todoType[] =>
+    state.todo.map((el) =>
+        el.id === payload.id ? { ...el, done: !el.done } : el
+    );
 
-const deleteTodo = (state: stateType, payload: payloadType) =>
-    state.todo.filter((el) => el.id !== payload);
+const deleteTodo = (state: stateType, payload: todoType): todoType[] =>
+    state.todo.filter((el) => el.id !== payload.id);
 
-const todoReducer = (state = INITIAL_STATE, action: actionType) => {
+const todoReducer = (
+    state: stateType = INITIAL_STATE,
+    action: actionType
+): stateType => {
     switch (action.type) {
         case InputActionTypes.ADD_TODO:
             return {
                 ...state,
-                todo: addTodo(state, action.payload),
+                todo: [...state.todo, addTodo(action.payload)],
             };
         case InputActionTypes.CHECK_TODO:
         case InputActionTypes.UNCHECK_TODO:

@@ -1,17 +1,17 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
+import { createStore, applyMiddleware, Store } from "redux";
 import todoReducer from "./todo/todo-reducer";
 
 import logger from "redux-logger";
-import { persistStore } from "redux-persist";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
-const middleware = [];
+const persistConfig = {
+    key: "root",
+    storage,
+};
 
-if (process.env.NODE_ENV === "development") {
-    middleware.push(logger);
-}
+const persistedReducer = persistReducer(persistConfig, todoReducer);
 
-const rootReducers: Reducer<State> = combineReducers({ todo: todoReducer });
-
-export const store = createStore(rootReducers, applyMiddleware(...middleware));
-
-export const persistor = persistStore(store);
+export const store: Store<stateType, actionType> & {
+    dispatch: dispatchType;
+} = createStore(persistedReducer, applyMiddleware(logger));
