@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./addTodo.scss";
+
 import { connect } from "react-redux";
 import { doAddTodo } from "../../redux/todo/todo-actions";
 
@@ -16,7 +18,7 @@ const AddTodo: React.FC = (props: addTodoProps) => {
 
     return (
         <div className="add-todo">
-            <input onChange={handleInput} />
+            <input onChange={handleInput} className="add-todo-input" />
             <button
                 className="add-todo-button"
                 onClick={() => doAddTodo(input)}

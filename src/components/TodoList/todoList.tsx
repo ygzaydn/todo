@@ -4,18 +4,28 @@ import { connect } from "react-redux";
 import { stateUncheckedTodo } from "../../redux/todo/todo-selectors";
 import TodoElement from "../TodoElement/todoElement";
 
+import "./todoList.scss";
+
 type todoListProps = PropsFromRedux & {};
 
 const TodoList: React.FC<todoListProps> = (props: todoListProps) => {
-    console.log(props);
     const { todo } = props;
     return (
-        <div className="todo-items">
-            {todo.map(
-                (todoElement: todoType): JSX.Element => (
-                    <TodoElement todoItem={todoElement} />
-                )
-            )}
+        <div className="todo-list-container">
+            <div className="todo-list-title">
+                <h5>Todo List</h5>
+            </div>
+            <ul className="todo-items">
+                {todo.length ? (
+                    todo.map(
+                        (todoElement: todoType): JSX.Element => (
+                            <TodoElement todoItem={todoElement} />
+                        )
+                    )
+                ) : (
+                    <h6>There is no item</h6>
+                )}
+            </ul>
         </div>
     );
 };

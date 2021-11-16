@@ -18,6 +18,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1400px;
+    margin: auto;
     .add-todo-container {
         display: block;
         margin-bottom: 2rem;
@@ -26,11 +28,14 @@
 
 .items-container {
     display: flex;
+    width:100%;
     .unchecked-container {
         padding: 5%;
+        width:50%;
     }
     .checked-container {
         padding: 5%;
+        width:50%;
     }
 }
 

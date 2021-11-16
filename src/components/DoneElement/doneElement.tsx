@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 import { doUncheckTodo, doDeleteTodo } from "../../redux/todo/todo-actions";
 
+import "./doneElement.scss";
+
 type doneElementProps = PropsFromRedux & {
     checkedItem: todoType;
 };
@@ -15,7 +17,7 @@ const DoneElement: React.FC<doneElementProps> = (props: doneElementProps) => {
         checkedItem: { id, task },
     } = props;
     return (
-        <div className="done-item" key={id}>
+        <li className="done-item" key={id}>
             <span className="done-item-id">ID: {id} </span>
             <span className="done-item-task">TASK: {task} </span>
             <button
@@ -30,7 +32,7 @@ const DoneElement: React.FC<doneElementProps> = (props: doneElementProps) => {
             >
                 Delete
             </button>
-        </div>
+        </li>
     );
 };
 

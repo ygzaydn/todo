@@ -3,6 +3,8 @@ import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { doCheckTodo, doDeleteTodo } from "../../redux/todo/todo-actions";
 
+import "./todoElement.scss";
+
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 type todoElementProps = PropsFromRedux & {
@@ -10,14 +12,13 @@ type todoElementProps = PropsFromRedux & {
 };
 
 const TodoElement: React.FC<todoElementProps> = (props: todoElementProps) => {
-    console.log(props);
     const {
         todoItem: { id, task },
         doDeleteTodo,
         doCheckTodo,
     } = props;
     return (
-        <div className="todo-item" key={id}>
+        <li className="todo-item" key={id}>
             <span className="todo-item-id">ID: {id} </span>
             <span className="todo-item-task">TASK: {task} </span>
             <button
@@ -32,7 +33,7 @@ const TodoElement: React.FC<todoElementProps> = (props: todoElementProps) => {
             >
                 Delete
             </button>
-        </div>
+        </li>
     );
 };
 

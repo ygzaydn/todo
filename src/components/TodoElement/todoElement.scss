@@ -1,0 +1,16 @@
+.todo-item {
+    display:flex;
+    flex-direction: column;
+    padding: 2% 0;
+    margin: 2% 0;
+    border-bottom:1px solid gray;
+    border-top: 1px solid gray;
+    .todo-item-check {
+        justify-content: center;
+        align-items: center;
+    }
+    .todo-item-delete {
+        justify-content: center;
+        align-items: center;
+    }
+}
