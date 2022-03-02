@@ -19,7 +19,10 @@ const TodoList: React.FC<todoListProps> = (props: todoListProps) => {
                 {todo.length ? (
                     todo.map(
                         (todoElement: todoType): JSX.Element => (
-                            <TodoElement todoItem={todoElement} />
+                            <TodoElement
+                                todoItem={todoElement}
+                                key={todoElement.id}
+                            />
                         )
                     )
                 ) : (
