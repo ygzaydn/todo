@@ -17,7 +17,7 @@ const DoneElement: React.FC<doneElementProps> = (props: doneElementProps) => {
         checkedItem: { id, task },
     } = props;
     return (
-        <li className="done-item" key={id}>
+        <div className="done-item" key={id}>
             <h6 className="todo-item-task">{task}</h6>
             <button
                 className="done-item-delete"
@@ -31,7 +31,7 @@ const DoneElement: React.FC<doneElementProps> = (props: doneElementProps) => {
             >
                 Mark as unchecked
             </button>
-        </li>
+        </div>
     );
 };
 

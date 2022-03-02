@@ -15,7 +15,7 @@ const DoneList: React.FC = (props: doneListProps) => {
             <div className="done-list-title">
                 <h5>Done List</h5>
             </div>
-            <ul className="done-items">
+            <div className="done-items">
                 {checked.length ? (
                     checked.map((checkedItem: todoType) => (
                         <DoneElement checkedItem={checkedItem} />
@@ -23,7 +23,7 @@ const DoneList: React.FC = (props: doneListProps) => {
                 ) : (
                     <h6>There is no item </h6>
                 )}
-            </ul>
+            </div>
         </div>
     );
 };

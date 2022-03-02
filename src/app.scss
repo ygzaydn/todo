@@ -31,10 +31,10 @@
     display: flex;
     background-color: rgba(#ffffff, 0.7);
     border-radius: 20px;
-    padding: 10px 4rem;
+    padding: 2rem 4rem;
     flex-direction: column;
     align-items: center;
-    max-width: calc(min(1440px, 90%));
+    max-width: calc(min(1200px, 90%));
     margin: 0 auto;
     min-height: 60vh;
     .add-todo-container {

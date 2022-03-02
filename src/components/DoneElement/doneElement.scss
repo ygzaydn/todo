@@ -1,9 +1,13 @@
 .done-item {
     display: flex;
     flex-direction: row;
-    margin: 0.4rem 2rem;
+    margin: 1rem 0;
 
     background-color: white;
+
+    &:hover &-delete {
+        background-position-x: 100%;
+    }
 
     &-task {
         flex-basis: 1;
@@ -37,19 +41,21 @@
         align-items: center;
         justify-content: center;
         align-items: center;
-        background-image: linear-gradient(to right, #ff7272, #9b0000);
+        background-image: linear-gradient(
+            to right,
+            #ffffff 0%,
+            #ffffff 50%,
+            #9b0000 50%,
+            #9b0000 100%
+        );
         background-size: 600%;
         background-position-x: 0%;
-        background-position-y: 0%;
+
         color: #fff;
         border: none;
         outline: none;
         padding: 0.75rem 1.5rem;
         cursor: pointer;
         transition: all 1s;
-        &:hover {
-            background-position-x: 100%;
-            background-position-y: 100%;
-        }
     }
 }

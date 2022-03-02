@@ -15,7 +15,7 @@ const TodoList: React.FC<todoListProps> = (props: todoListProps) => {
             <div className="todo-list-title">
                 <h5>Todo List</h5>
             </div>
-            <ul className="todo-items">
+            <div className="todo-items">
                 {todo.length ? (
                     todo.map(
                         (todoElement: todoType): JSX.Element => (
@@ -25,7 +25,7 @@ const TodoList: React.FC<todoListProps> = (props: todoListProps) => {
                 ) : (
                     <h6>There is no item</h6>
                 )}
-            </ul>
+            </div>
         </div>
     );
 };

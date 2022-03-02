@@ -18,7 +18,7 @@ const TodoElement: React.FC<todoElementProps> = (props: todoElementProps) => {
         doCheckTodo,
     } = props;
     return (
-        <li className="todo-item" key={id}>
+        <div className="todo-item" key={id}>
             <h6 className="todo-item-task">{task}</h6>
             <div className="todo-item-button-container">
                 <button
@@ -34,7 +34,7 @@ const TodoElement: React.FC<todoElementProps> = (props: todoElementProps) => {
                     Mark as checked
                 </button>
             </div>
-        </li>
+        </div>
     );
 };
 
