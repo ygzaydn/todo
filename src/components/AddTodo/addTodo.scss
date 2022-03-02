@@ -1,12 +1,33 @@
 .add-todo {
-    display:flex;
-    flex-direction:column
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-.add-todo-input{
-    margin:2%;  
-}
-
-.add-todo-button {
-    margin:2%;
+    &-input {
+        border: none;
+        &::placeholder {
+            color: #002233;
+            padding-left: 1.4rem;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    &-button {
+        background-image: linear-gradient(to right, #002233, #0066ff);
+        background-size: 600%;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        color: #fff;
+        border: none;
+        outline: none;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        transition: all 1s;
+        font-size: 1.5rem;
+        &:hover {
+            background-position-x: 100%;
+            background-position-y: 100%;
+        }
+    }
 }

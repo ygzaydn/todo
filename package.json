@@ -1,7 +1,8 @@
 {
   "homepage":"https://ygzaydn.github.io/todo/",
   "name": "todo",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "erolyagizaydin",
   "private":true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",

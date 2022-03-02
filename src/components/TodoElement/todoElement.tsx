@@ -19,20 +19,21 @@ const TodoElement: React.FC<todoElementProps> = (props: todoElementProps) => {
     } = props;
     return (
         <li className="todo-item" key={id}>
-            <span className="todo-item-id">ID: {id} </span>
-            <span className="todo-item-task">TASK: {task} </span>
-            <button
-                className="todo-item-check"
-                onClick={() => doCheckTodo(props.todoItem)}
-            >
-                Mark as checked
-            </button>
-            <button
-                className="todo-item-delete"
-                onClick={() => doDeleteTodo(props.todoItem)}
-            >
-                Delete
-            </button>
+            <h6 className="todo-item-task">{task}</h6>
+            <div className="todo-item-button-container">
+                <button
+                    className="todo-item-delete"
+                    onClick={() => doDeleteTodo(props.todoItem)}
+                >
+                    Delete
+                </button>
+                <button
+                    className="todo-item-check"
+                    onClick={() => doCheckTodo(props.todoItem)}
+                >
+                    Mark as checked
+                </button>
+            </div>
         </li>
     );
 };

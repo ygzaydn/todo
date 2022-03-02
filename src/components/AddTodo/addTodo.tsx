@@ -18,12 +18,16 @@ const AddTodo: React.FC = (props: addTodoProps) => {
 
     return (
         <div className="add-todo">
-            <input onChange={handleInput} className="add-todo-input" />
+            <input
+                onChange={handleInput}
+                className="add-todo-input"
+                placeholder="Enter new todo"
+            />
             <button
                 className="add-todo-button"
-                onClick={() => doAddTodo(input)}
+                onClick={() => input !== "" && doAddTodo(input)}
             >
-                Add new todo item
+                &#x2b;
             </button>
         </div>
     );

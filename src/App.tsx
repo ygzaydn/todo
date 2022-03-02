@@ -9,7 +9,7 @@ type appProps = {};
 
 const App: React.FC<appProps> = () => {
     return (
-        <div className="App">
+        <div className="app">
             <div className="title">
                 <h6>Todo App with Redux / Typescript</h6>
             </div>
@@ -17,7 +17,7 @@ const App: React.FC<appProps> = () => {
                 <div className="add-todo-container">
                     <AddTodo />
                 </div>
-                <div className="items-container">
+                <div className="list-container">
                     <div className="unchecked-container">
                         <TodoList />
                     </div>
