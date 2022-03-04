@@ -45,6 +45,13 @@
             #9b0000 50%,
             #9b0000 100%
         );
+        @media only screen and (max-width: 1200px) {
+            background-image: linear-gradient(
+                to right,
+                #9b0000 0%,
+                #9b0000 100%
+            );
+        }
         background-size: 600%;
         background-position-x: 0%;
 
@@ -53,7 +60,7 @@
         outline: none;
         padding: 0.75rem 1.5rem;
         cursor: pointer;
-        transition: all 1s;
+        transition: all 0.4s;
     }
     &-button-container {
         display: flex;
